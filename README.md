@@ -57,7 +57,7 @@
 </head>
 <body>
   <div id="container">
-    <h1>👇CLICK👇</h1>
+    <h1>👇👇</h1>
 
     <select id="languageSelect" onchange="changeLanguage()">
       <option value="en">English</option>
