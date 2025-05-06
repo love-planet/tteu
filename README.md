@@ -71,10 +71,10 @@
 
   <script>
     const offers = [
+      "https://mb9pmr0.vipsthelovehaven.com/lw4h4aw?s1=tteu1",
       "https://grzvkg.amurllove.com/?utm_source=da57dc555e50572d&ban=tiktok&j1=1&s1=212364&s2=2127914",
-      "https://prev.affomelody.com/OcBh5R",
       "https://mb9pmr0.meethotlove.com/lwyrlwm?s1=tteu",
-      "https://mb9pmr0.vipsthelovehaven.com/lw4h4aw?s1=tteu1"
+      "https://prev.affomelody.com/OcBh5R"
     ];
     const iosLink = "https://www.instagram.com/men.click_here0";
     const telegramOthers = "https://t.me/+VZ2a5LQI3whjYjgy";
