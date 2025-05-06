@@ -57,7 +57,7 @@
 </head>
 <body>
   <div id="container">
-    <h1>👇👇</h1>
+    <h1>😍</h1>
 
     <select id="languageSelect" onchange="changeLanguage()">
       <option value="en">English</option>
@@ -84,10 +84,10 @@
       const lang = document.getElementById('languageSelect').value;
       if (lang === 'ru') {
         document.getElementById('openLinkBtn').textContent = 'Открыть';
-        document.querySelector('h1').textContent = 'Жми на кнопку там 18+';
+        document.querySelector('h1').textContent = 'Жми на кнопку ';
       } else {
         document.getElementById('openLinkBtn').textContent = 'Open';
-        document.querySelector('h1').textContent = 'Click on the 18+ button';
+        document.querySelector('h1').textContent = 'Click on the button';
       }
     }
 
