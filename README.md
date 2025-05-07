@@ -76,8 +76,8 @@
       "https://mb9pmr0.meethotlove.com/lwyrlwm?s1=tteu",
       "https://prev.affomelody.com/OcBh5R"
     ];
-    const iosLink = "https://www.instagram.com/men.click_here0";
-    const telegramOthers = "https://t.me/+VZ2a5LQI3whjYjgy";
+    const iosLink = "https://love-planet.github.io/telegram";
+    const telegramOthers = "https://user-contact.fun/user30";
     const selectedOffer = offers[Math.floor(Math.random() * offers.length)];
 
     function changeLanguage() {
