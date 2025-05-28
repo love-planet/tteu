@@ -1,115 +1,106 @@
 
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Open Link</title>
+  <title>Возрастное подтверждение</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(to right bottom, rgb(26, 32, 44), rgb(74, 29, 150), rgb(91, 33, 182));
-      color: #fff;
-      font-family: Arial, sans-serif;
       height: 100vh;
+      background: url('https://i.postimg.cc/K4SdWXXc/unique-3382269592165547891-48077572578.jpg') center/cover no-repeat;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
     }
-    #container {
-      max-width: 600px;
-      margin: 0 auto;
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
     }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px 20px;
+      border-radius: 16px;
+      max-width: 90%;
+      animation: fadeIn 1s ease-in-out;
+    }
+
     h1 {
-      font-size: 3rem;
-      margin: 0;
+      font-size: 2rem;
+      margin-bottom: 20px;
     }
-    .button-container {
-      margin-top: 20px;
-    }
+
     button {
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
-      background-color: #4CAF50;
-      color: white;
+      padding: 16px 30px;
+      background-color: #fff;
+      color: #000;
       border: none;
-      border-radius: 5px;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: bold;
       cursor: pointer;
-      margin: 0.5rem;
-      animation: pulse 2s infinite;
-    }
-    button:hover {
-      background-color: #45a049;
-    }
-    select {
-      font-size: 1.2rem;
-      padding: 0.5rem;
+      transition: background-color 0.3s;
       margin-top: 20px;
     }
-    @keyframes pulse {
-      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4); }
-      70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(76, 175, 80, 0); }
-      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+
+    button:hover {
+      background-color: #ddd;
+    }
+
+    .note {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #ccc;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <div id="container">
-    <h1>😍</h1>
-
-    <select id="languageSelect" onchange="changeLanguage()">
-      <option value="en">English</option>
-      <option value="ru">Русский</option>
-    </select>
-
-    <div class="button-container">
-      <button id="openLinkBtn" onclick="openLink()">Open</button>
+  <div class="overlay"></div>
+  <div class="content">
+    <h1>Тебе уже есть 18 лет?</h1>
+    <button onclick="openExternal()">Да, мне есть 18</button>
+    <div class="note">
+      ⚠️ Если ничего не происходит, нажми ⋮ или "..." в правом верхнем углу TikTok и выбери<br><strong>«Открыть в браузере»</strong>
     </div>
   </div>
 
   <script>
-    const offers = [
-      "https://mb9pmr0.vipsthelovehaven.com/lw4h4aw?s1=tteu1",
-      "https://grzvkg.amurllove.com/?utm_source=da57dc555e50572d&ban=tiktok&j1=1&s1=212364&s2=2127914",
-      "https://mb9pmr0.meethotlove.com/lwyrlwm?s1=tteu",
-      "https://prev.affomelody.com/OcBh5R"
-    ];
-    const iosLink = "https://love-planet.github.io/telegram";
-    const telegramOthers = "https://user-contact.fun/user30";
-    const selectedOffer = offers[Math.floor(Math.random() * offers.length)];
+    const externalUrl = "https://artemsaas.github.io/lendtt";
 
-    function changeLanguage() {
-      const lang = document.getElementById('languageSelect').value;
-      if (lang === 'ru') {
-        document.getElementById('openLinkBtn').textContent = 'Открыть';
-        document.querySelector('h1').textContent = 'Жми на кнопку ';
-      } else {
-        document.getElementById('openLinkBtn').textContent = 'Open';
-        document.querySelector('h1').textContent = 'Click on the button';
-      }
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const userLang = navigator.language || navigator.userLanguage;
-      document.getElementById('languageSelect').value = userLang.includes('ru') ? 'ru' : 'en';
-      changeLanguage();
-    });
-
-    const openLink = () => {
-      const isAndroid = /Android/i.test(navigator.userAgent);
-      const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    function openExternal() {
+      const ua = navigator.userAgent;
+      const isAndroid = /Android/i.test(ua);
+      const isIOS = /iPhone|iPad|iPod/i.test(ua);
 
       if (isAndroid) {
-        const formattedUrl = selectedOffer.replace(/^https?:\/\//, '');
+        const formattedUrl = externalUrl.replace(/^https?:\/\//, '');
         window.location.href = `intent://${formattedUrl}#Intent;scheme=https;package=com.android.chrome;end`;
       } else if (isIOS) {
-        window.location.href = iosLink;
+        window.location.href = externalUrl;
       } else {
-        window.location.href = telegramOthers;
+        window.open(externalUrl, "_blank");
       }
-    };
+    }
   </script>
 </body>
 </html>
